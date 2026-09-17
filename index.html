@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Friendly — Imóveis e praias pet friendly no litoral | Praia Digital</title>
+<meta name="description" content="Encontre imóveis que aceitam pets, praias pet friendly e serviços veterinários no litoral paulista.">
+<link rel="canonical" href="https://praia.digital/pet-friendly/">
+<style>:root{--azul:#0a2540;--mar:#0e7490;--areia:#f8f5ef}*{margin:0;box-sizing:border-box;font-family:system-ui,sans-serif}body{background:var(--areia);color:#1e293b}header{background:linear-gradient(135deg,var(--azul),var(--mar));color:#fff;padding:2.5rem 1.5rem;text-align:center}.badge{display:inline-block;background:rgba(255,255,255,.15);padding:.25rem .8rem;border-radius:999px;font-size:.8rem;margin-bottom:.8rem}main{max-width:760px;margin:2rem auto;padding:0 1.25rem}.card{background:#fff;border-radius:1rem;padding:1.75rem;box-shadow:0 4px 24px rgba(10,37,64,.08);margin-bottom:1.5rem}label{display:block;font-weight:600;margin:1rem 0 .35rem}select{width:100%;padding:.7rem;border:1px solid #cbd5e1;border-radius:.5rem;font-size:1rem}.item{background:var(--areia);border-radius:.7rem;padding:.9rem 1.1rem;margin:.5rem 0}.item b{color:var(--azul)}.item small{color:#64748b;display:block}.badge2{display:inline-block;font-size:.72rem;padding:.15rem .55rem;border-radius:999px;font-weight:700;margin-top:.3rem}.ok{background:#dcfce7;color:#166534}.parcial{background:#fef9c3;color:#854d0e}table{width:100%;border-collapse:collapse;font-size:.92rem}td,th{padding:.55rem;border-bottom:1px solid #e2e8f0;text-align:left}.rede{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}.rede a{background:#fff;border:1px solid #e2e8f0;border-radius:.6rem;padding:.8rem;text-decoration:none;color:var(--azul);font-weight:600;font-size:.9rem}footer{text-align:center;padding:2rem;color:#64748b;font-size:.85rem}footer a{color:var(--mar)}</style>
+</head>
+<body>
+<header><span class="badge">🛰️ App satélite de <a href="https://praia.digital" style="color:#fff">praia.digital</a></span><h1>🐾 Pet Friendly</h1><p>Praia com seu melhor amigo — imóveis, praias e serviços</p></header>
+<main>
+<div class="card"><h3>🏖️ Praias pet friendly por cidade</h3>
+<label>Cidade</label><select id="cidade" onchange="show()"><option>Guarujá</option><option>Santos</option><option>São Sebastião</option><option>Ubatuba</option><option>Caraguatatuba</option><option>Bertioga</option></select>
+<div id="praia" style="margin-top:1rem"></div></div>
+<div class="card"><h3>🏠 Comprando/alugando com pet: o essencial</h3><table>
+<tr><th>Tema</th><th>O que verificar</th></tr>
+<tr><td>Condomínio</td><td>Convenção pode restringir porte/raça — exija cópia antes de comprar</td></tr>
+<tr><td>Temporada</td><td>Imóveis pet friendly cobram 10–20% a mais e lotam mais rápido</td></tr>
+<tr><td>Piso</td><td>Prefira porcelanato; madeira sofre com maresia + patas molhadas</td></tr>
+<tr><td>Área externa</td><td>Grade na varanda é obrigatória em andares altos</td></tr></table>
+<p style="margin-top:.8rem;font-size:.9rem">Anfitrião: aceitar pets aumenta a ocupação em ~15%. Veja no <a href="https://praia.digital/checklist-anfitriao">Checklist do Anfitrião</a> e precifique no <a href="https://praia.digital/preco-justo">Preço Justo</a>.</p></div>
+<h2 style="margin:1.5rem 0 .8rem">🌐 Rede Praia Digital</h2>
+<div class="rede">
+<a href="https://praia.digital">🏠 Portal Praia Digital</a>
+<a href="https://praia.digital/match-praia">💘 Match Praia</a>
+<a href="https://praia.digital/vizinho-digital">🏘️ Vizinho Digital</a>
+<a href="https://praia.digital/guia-comprador">📖 Guia do Comprador</a>
+<a href="https://praia.digital/apps">🛰️ Todos os apps</a>
+</div>
+</main>
+<footer>Feito com 🌊 pela rede <a href="https://praia.digital">Praia Digital</a> · <a href="https://github.com/praiadigital/pet-friendly">código aberto no GitHub</a></footer>
+<script>
+const P={'Guarujá':[['Astúrias','Tolerada fora do horário de pico','parcial'],['Pernambuco','Trecho pet friendly sinalizado','ok']],'Santos':[['Gonzaga (orla)','Cães na orla com guia após 21h','parcial'],['José Menino','Dog beach aos sábados de manhã','ok']],'São Sebastião':[['Maresias','Amplamente pet friendly na faixa de areia','ok'],['Juquehy','Aceita pets com guia','ok']],'Ubatuba':[['Itaguá','Pet friendly o ano todo','ok'],['Grande','Permitida fora de feriados','parcial']],'Caraguatatuba':[['Tabatinga','Tranquila e pet friendly','ok'],['Martim de Sá','Permitida com guia','parcial']],'Bertioga':[['Riviera (São Lourenço)','Regras por módulo de praia','parcial'],['Indaiá','Pet friendly','ok']]};
+function show(){praia.innerHTML=P[cidade.value].map(p=>`<div class="item"><b>🏖️ ${p[0]}</b><small>${p[1]}</small><span class="badge2 ${p[2]}">${p[2]==='ok'?'✅ Pet friendly':'⚠️ Com restrições'}</span></div>`).join('')}
+show();
+</script>
+</body></html>
